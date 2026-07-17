@@ -14,7 +14,7 @@ dotenv.config()
 const { Pool } = pg
 const pool = new Pool({ connectionString: process.env.DATABASE_URL })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 const MESSAGE_SYNC = 0
 const MESSAGE_AWARENESS = 1
 

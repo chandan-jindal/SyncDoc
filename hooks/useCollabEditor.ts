@@ -37,8 +37,10 @@ export function useCollabEditor(documentId: string, user: User) {
 
     const token = Cookies.get('token') ?? ''
 
+    const WS_URL = process.env.NEXT_PUBLIC_WS_URL ?? 'ws://localhost:3001'
+
     const provider = new WebsocketProvider(
-      'ws://localhost:3001',
+      'wss://syncdoc-production-4772.up.railway.app',
       `doc/${documentId}`,
       ydoc,
       { params: { token } }
