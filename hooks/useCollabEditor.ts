@@ -40,7 +40,7 @@ export function useCollabEditor(documentId: string, user: User) {
     const WS_URL = process.env.NEXT_PUBLIC_WS_URL ?? 'ws://localhost:3001'
 
     const provider = new WebsocketProvider(
-      'wss://syncdoc-production-4772.up.railway.app',
+      process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:3001',
       `doc/${documentId}`,
       ydoc,
       { params: { token } }
